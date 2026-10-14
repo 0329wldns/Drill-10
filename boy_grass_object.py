@@ -51,6 +51,7 @@ class Balloon:
         self.image = load_image('ball21x21.png')
 
     def update(self):
+        self.y += 5
         pass
 
     def draw(self):
