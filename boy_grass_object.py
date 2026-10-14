@@ -51,7 +51,10 @@ class Balloon:
         self.speed = random.randint(2, 10)
         self.isTouchTop = False
         self.degree = 0
-        self.image = load_image('ball21x21.png')
+        if random.randint(0, 1):
+            self.image = load_image('ball21x21.png')
+        else:
+            self.image = load_image('ball41x41.png')
 
     def update(self):
         if not self.isTouchTop:
