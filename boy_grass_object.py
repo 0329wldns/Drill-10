@@ -48,10 +48,11 @@ class Zombie:
 class Balloon:
     def __init__(self):
         self.x, self.y = random.randint(100, 600), 30
+        self.speed = 10
         self.image = load_image('ball21x21.png')
 
     def update(self):
-        self.y += 5
+        self.y += self.speed
         pass
 
     def draw(self):
