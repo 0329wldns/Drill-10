@@ -45,6 +45,18 @@ class Zombie:
         self.image.clip_draw(self.frame * frame_width, 0, frame_width, frame_height,
         self.x, self.y, frame_width // 2, frame_height // 2)
 
+class Balloon:
+    def __init__(self):
+        self.x, self.y = 400, 30
+        self.image = load_image('ball21x21.png')
+
+    def update(self):
+        pass
+
+    def draw(self):
+        self.image.draw(self.x, self.y)
+        pass
+
 def handle_events():
     global running
     events = get_events()
@@ -69,6 +81,9 @@ def reset_world():
 
     zombie = Zombie()
     world.append(zombie)
+
+    balloon = Balloon()
+    world.append(balloon)
 
 def update_world():
     for o in world:
