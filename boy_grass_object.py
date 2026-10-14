@@ -61,8 +61,7 @@ class Balloon:
             if (self.degree >= 360):
                 self.degree -= 360
             rad = math.radians(self.degree)
-            print(rad)
-            self.y = 600 - math.sin(rad) * 50
+            self.y = 600 + (math.sin(rad) - 1) * 25
 
         if self.y >= 600:
             self.y = 600
