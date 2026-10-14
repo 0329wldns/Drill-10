@@ -54,7 +54,7 @@ class Balloon:
     def update(self):
         self.y += self.speed
         if self.y >= 600:
-            self.y = 600
+            self.y -= self.speed * 2
         pass
 
     def draw(self):
