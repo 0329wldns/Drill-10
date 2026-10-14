@@ -49,13 +49,26 @@ class Balloon:
     def __init__(self):
         self.x, self.y = random.randint(100, 600), 30
         self.speed = random.randint(2, 10)
+        self.isTouchTop = False
+        self.degree = 0
         self.image = load_image('ball21x21.png')
 
     def update(self):
-        self.y += self.speed
+        if not self.isTouchTop:
+            self.y += self.speed
+        else:
+            self.degree += 9
+            if (self.degree >= 360):
+                self.degree -= 360
+            rad = math.radians(self.degree)
+            print(rad)
+            self.y = 600 - math.sin(rad) * 50
+
         if self.y >= 600:
-            self.y -= random.randint(20, 40)
-            self.speed = random.randint(2, 5)
+            self.y = 600
+            self.isTouchTop = True
+            # self.y -= random.randint(20, 40)
+            # self.speed = random.randint(2, 5)
         pass
 
     def draw(self):
