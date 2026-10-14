@@ -54,7 +54,8 @@ class Balloon:
     def update(self):
         self.y += self.speed
         if self.y >= 600:
-            self.y -= self.speed * 2
+            self.y -= random.randint(20, 40)
+            self.speed = random.randint(2, 5)
         pass
 
     def draw(self):
